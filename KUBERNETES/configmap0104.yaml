@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: newcm
+data:
+  key1: shifali
+  key2: vageesha
