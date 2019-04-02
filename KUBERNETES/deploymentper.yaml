@@ -45,7 +45,9 @@ spec:
    - name: tom
 
      image: manya97/manya_tomcat:0.1
-
+     envFrom:
+     - configMapRef:
+         name: newcm
      ports:
 
      - containerPort: 80
