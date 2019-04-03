@@ -45,11 +45,15 @@ spec:
    - name: tom
 
      image: manya97/manya_tomcat:0.1
-     envFrom:
-     - configMapRef:
-         name: newcm
-     - secretRef:
-         name: my-secret
+     volumeMounts:
+     - name: secret-volume
+       mountPath: /apache-tomcat-8.0.32/webapp
      ports:
-
      - containerPort: 80
+   volumes:
+   - name: secret-volume
+     secret:
+       secretName: my-secret
+
+    
+  
