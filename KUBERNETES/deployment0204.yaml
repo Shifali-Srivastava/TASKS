@@ -47,15 +47,15 @@ spec:
 
      image: manya97/manya_tomcat:0.1
      volumeMounts:
-     - name: index
-       mountPath: /apache-tomcat-8.0.32/webapps/ROOT/index.jsp
+     - name: config-volume
+       mountPath: /apache-tomcat-8.0.32/webapps/ROOT
      - name: secret-volume
        mountPath: /apache-tomcat-8.0.32/webapp
      ports:
      - containerPort: 80
 
    volumes:
-     - name: index
+     - name: config-volume
        configMap:
          name: cm3
      - name: secret-volume
